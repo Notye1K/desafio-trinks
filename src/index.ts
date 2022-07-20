@@ -9,11 +9,6 @@ export class Coordinate {
       this.x = 0;
       this.y = 0;
       return;
-    } else {
-      // @ts-ignore
-      this.x = parseInt(x);
-      // @ts-ignore
-      this.y = parseInt(y);
     }
   }
 
@@ -25,23 +20,19 @@ export class Coordinate {
 
     switch (vector[0].toUpperCase()) {
       case "N":
-        // @ts-ignore
-        this.y += parseInt(vector[1]);
+        this.y += vector[1];
         break;
 
       case "S":
-        // @ts-ignore
-        this.y -= parseInt(vector[1]);
+        this.y -= vector[1];
         break;
 
       case "L":
-        // @ts-ignore
-        this.x += parseInt(vector[1]);
+        this.x += vector[1];
         break;
 
       case "O":
-        // @ts-ignore
-        this.x -= parseInt(vector[1]);
+        this.x -= vector[1];
         break;
 
       default:
