@@ -9,6 +9,9 @@ export class Coordinate {
       this.x = 0;
       this.y = 0;
       return;
+    } else {
+      this.x = Math.trunc(x);
+      this.y = Math.trunc(y);
     }
   }
 
@@ -20,19 +23,19 @@ export class Coordinate {
 
     switch (vector[0].toUpperCase()) {
       case "N":
-        this.y += vector[1];
+        this.y += Math.trunc(vector[1]);
         break;
 
       case "S":
-        this.y -= vector[1];
+        this.y -= Math.trunc(vector[1]);
         break;
 
       case "L":
-        this.x += vector[1];
+        this.x += Math.trunc(vector[1]);
         break;
 
       case "O":
-        this.x -= vector[1];
+        this.x -= Math.trunc(vector[1]);
         break;
 
       default:

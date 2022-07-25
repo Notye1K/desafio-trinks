@@ -56,3 +56,15 @@ it("case 2", () => {
   coordinate.getXY();
   expect(logSpy).toHaveBeenCalledWith("(-14, 7)");
 });
+
+it("given a floating number should ignore decimals", () => {
+  const logSpy = jest.spyOn(console, "log");
+
+  const coordinate = new Coordinate(1.8, 2.2);
+  coordinate.getXY();
+  expect(logSpy).toHaveBeenCalledWith("(1, 2)");
+
+  coordinate.move(["S", 9.99]);
+  coordinate.getXY();
+  expect(logSpy).toHaveBeenCalledWith("(1, -7)");
+});
